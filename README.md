@@ -6,3 +6,21 @@ Apple Swift Resources
 1. [Apple Swift Resources](https://developer.apple.com/swift/resources/)
 1. [Swift——Build apps using a powerful open language](https://developer.apple.com/documentation/swift)
 
+<br />
+
+## My Own Useful Utilities
+
+```swift
+/// Execute the specified handler after the specified seconds
+/// - parameters:
+///     - seconds: the specified seconds
+///     - handler: the closure to be executed
+public func delayExecuteHandlerOnMainQueue(seconds: Double, handler: () -> Void) {
+    
+    let sec = seconds < 0.00125 ? 0.00125 : seconds
+    DispatchQueue.main.asyncAfter(deadline: DispatchTime(uptimeNanoseconds: DispatchTime.now().uptimeNanoseconds + UInt64(sec * 1000_000_000.0)), execute: {
+        print("Hello, wortd!")
+    })
+}
+```
+
