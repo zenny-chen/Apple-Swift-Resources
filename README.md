@@ -15,12 +15,12 @@ Apple Swift Resources
 /// - parameters:
 ///     - seconds: the specified seconds
 ///     - handler: the closure to be executed
-public func delayExecuteHandlerOnMainQueue(seconds: Double, handler: () -> Void) {
+public func delayExecuteHandlerOnMainQueue(seconds: Double, handler: @escaping () -> Void) {
     
     let sec = seconds < 0.00125 ? 0.00125 : seconds
-    DispatchQueue.main.asyncAfter(deadline: DispatchTime(uptimeNanoseconds: DispatchTime.now().uptimeNanoseconds + UInt64(sec * 1000_000_000.0)), execute: {
-        print("Hello, wortd!")
-    })
+    DispatchQueue.main.asyncAfter(deadline:
+        DispatchTime(uptimeNanoseconds: DispatchTime.now().uptimeNanoseconds +
+            UInt64(sec * 1000_000_000.0)), execute: handler)
 }
 ```
 
