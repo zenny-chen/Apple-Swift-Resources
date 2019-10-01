@@ -5,6 +5,7 @@ Apple Swift Resources
 
 1. [Apple Swift Resources](https://developer.apple.com/swift/resources/)
 1. [Swift——Build apps using a powerful open language](https://developer.apple.com/documentation/swift)
+1. [Swift Evolution](https://apple.github.io/swift-evolution/)
 
 <br />
 
